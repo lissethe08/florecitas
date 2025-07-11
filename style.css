@@ -1,35 +1,106 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background: black;
   color: white;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Arial', sans-serif;
   overflow: hidden;
 }
 
-h1 {
-  font-size: 2em;
-  text-shadow: 0 0 10px #fff;
-  margin-bottom: 20px;
+.pantalla-inicial {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: black;
 }
 
-button {
-  padding: 10px 25px;
-  font-size: 16px;
+.pantalla-inicial h1 {
+  font-size: 2.5em;
+  text-shadow: 0 0 10px white;
+}
+
+.pantalla-inicial button {
+  margin-top: 20px;
+  padding: 10px 30px;
+  font-size: 1.2em;
   border: none;
-  border-radius: 20px;
-  background-color: #b3caff;
-  color: black;
+  border-radius: 10px;
+  background: #a885ff;
+  color: white;
+  box-shadow: 0 0 20px #a885ff;
   cursor: pointer;
-  box-shadow: 0 0 10px #b3caff;
-  transition: background 0.3s;
 }
 
-button:hover {
-  background-color: #8aaaff;
+.pantalla-flores {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  background: black;
+}
+
+.flor {
+  position: relative;
+  animation: florecer 2s ease-in-out;
+}
+
+.pistilo {
+  width: 30px;
+  height: 30px;
+  background: pink;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 20px pink;
+}
+
+.petalo {
+  width: 30px;
+  height: 50px;
+  background: pink;
+  border-radius: 50%;
+  position: absolute;
+  box-shadow: 0 0 10px pink;
+}
+
+.petalo1 { transform: rotate(0deg) translate(0, -40px); }
+.petalo2 { transform: rotate(72deg) translate(0, -40px); }
+.petalo3 { transform: rotate(144deg) translate(0, -40px); }
+.petalo4 { transform: rotate(216deg) translate(0, -40px); }
+
+.tallo {
+  width: 4px;
+  height: 100px;
+  background: pink;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px pink;
+}
+
+/* Estrellitas */
+.estrellas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  background-image: radial-gradient(white 1px, transparent 1px);
+  background-size: 20px 20px;
+  animation: parpadeo 3s infinite;
+}
+
+@keyframes parpadeo {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes florecer {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
