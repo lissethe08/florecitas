@@ -2,24 +2,30 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flores para ti</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1 class="mensaje">Tengo algo para ti</h1>
-    <button class="boton" onclick="abrirFlores()">Abrir</button>
+  <div class="intro" id="intro">
+    <h1>Tengo algo para ti</h1>
+    <button onclick="mostrarFlores()">Abrir</button>
   </div>
 
-  <div class="flores" id="flores" style="display: none;">
-    <!-- Aquí irían tus flores animadas -->
-    <img src="https://raw.githubusercontent.com/AdrianVillamayor/flowers-animation/main/src/flower.png" alt="flores animadas" class="imagen-flores">
+  <div class="flores" id="flores">
+    <!-- Flor animada -->
+    <div class="flower">
+      <div class="stem"></div>
+      <div class="petal petal1"></div>
+      <div class="petal petal2"></div>
+      <div class="petal petal3"></div>
+      <div class="petal petal4"></div>
+      <div class="petal petal5"></div>
+    </div>
   </div>
 
   <script>
-    function abrirFlores() {
-      document.querySelector(".container").style.display = "none";
+    function mostrarFlores() {
+      document.getElementById("intro").style.display = "none";
       document.getElementById("flores").style.display = "flex";
     }
   </script>
