@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  background: black;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+  color: white;
+}
+
+.flores-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+}
+
+.flores {
+  position: relative;
+  width: 100px;
+  height: 200px;
+  animation: florecer 3s ease-in-out forwards;
+}
+
+.tallo {
+  width: 4px;
+  height: 120px;
+  background: linear-gradient(to top, #ff7ad9, #ffa3e3);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hojas {
+  position: absolute;
+  bottom: 30px;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #ff9afc 10%, transparent 70%);
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: brillar 2s infinite alternate;
+  opacity: 0.6;
+}
+
+.flor {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #ff79d3 10%, #ffc6f9 40%, transparent 70%);
+  border-radius: 50%;
+  animation: abrir 2s forwards 2s;
+}
+
+.mensaje {
+  font-size: 1rem;
+  margin-top: 20px;
+  text-align: center;
+  color: #ffaae7;
+  animation: aparecer 2s ease-in-out 3s forwards;
+  opacity: 0;
+}
+
+@keyframes florecer {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+@keyframes abrir {
+  to { transform: translateX(-50%) scale(1); opacity: 1; }
+}
+
+@keyframes brillar {
+  from { opacity: 0.3; }
+  to { opacity: 0.8; }
+}
+
+@keyframes aparecer {
+  to { opacity: 1; }
+}
