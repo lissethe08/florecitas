@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Flores para Lisseth</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flores para ti</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="flores-container">
-    <div class="flores">
-      <div class="tallo"></div>
-      <div class="hojas"></div>
-      <div class="flor"></div>
-    </div>
-    <p class="mensaje">Estas flores te durarán más que las originales, las otras se marchitan, jajaja 💐</p>
+  <div class="container">
+    <h1 class="mensaje">Tengo algo para ti</h1>
+    <button class="boton" onclick="abrirFlores()">Abrir</button>
   </div>
+
+  <div class="flores" id="flores" style="display: none;">
+    <!-- Aquí irían tus flores animadas -->
+    <img src="https://raw.githubusercontent.com/AdrianVillamayor/flowers-animation/main/src/flower.png" alt="flores animadas" class="imagen-flores">
+  </div>
+
+  <script>
+    function abrirFlores() {
+      document.querySelector(".container").style.display = "none";
+      document.getElementById("flores").style.display = "flex";
+    }
+  </script>
 </body>
 </html>
